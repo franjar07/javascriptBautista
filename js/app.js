@@ -1,12 +1,15 @@
-const actualYear = 2021;
+let nombre = prompt("Ingresa tu nombre");
+let vehiculo = parseInt(prompt("Ingresa el año del modelo de tu vehículo"));
+let kilometros = parseInt(prompt("Ingresa el Kilometraje de tu vehiculo"));
 
-let myName = prompt("Ingrese su nombre");
-let mylastName = prompt("Ingrese su apellido");
-let yearOne = parseInt(prompt("Ingresa tu año de nacimiento"));
-let oldCity = prompt("Ingrese la ciudad donde nació");
-let myCity = prompt("Ingrese la ciudad donde vive");
-let duration = parseInt(prompt("Hace cuantos años vive en esta ciudad"));
-let age = actualYear - yearOne;
-let ageOrigin = actualYear - duration;
-
-alert("Hola " + myName + " " + mylastName + ", tu edad es " + age + " años" + " y vives en " + myCity + " desde el " + ageOrigin + ".")
+if (kilometros<50000 && vehiculo >= 2017) {
+    for (let i=10000; i<=150000; i=i+10000) {
+        let revision = kilometros+i;
+        alert ("Gracias "+nombre+","+" tu próxima revision es a los "+revision+" Kilometros.");
+    }
+} else {
+    for (let i=5000; i<=150000; i=i+5000) {
+        let revision = kilometros+i;
+        alert("Gracias "+nombre+","+" tu próxima revision es a los "+revision+" Kilometros.")
+    }
+}
