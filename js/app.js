@@ -1,21 +1,49 @@
-// const actualYear = 2021;
+function descuentos(pCompra, pDescuento, pCalculo) {
+    let resultado = 0;
+    switch (pCalculo) {
+        case "compensar":
+            resultado = (pCompra - (pCompra * pDescuento))
+            break;
+        case "colsubsidio":
+            resultado = (pCompra - (pCompra * pDescuento))
+        case "policia":
+            resultado = (pCompra - (pCompra * pDescuento))
+        case "cafam":
+            resultado = (pCompra - (pCompra * pDescuento))
+        case "No":
+            resultado = (pCompra - (pCompra * pDescuento))  
+        default:
+            break;
+    }
+    return resultado;
+}
 
-// let myName = prompt("Ingrese su nombre");
-// let mylastName = prompt("Ingrese su apellido");
-// let yearOne = parseInt(prompt("Ingresa tu año de nacimiento"));
-// let oldCity = prompt("Ingrese la ciudad donde nació");
-// let myCity = prompt("Ingrese la ciudad donde vive");
-// let duration = parseInt(prompt("Hace cuantos años vive en esta ciudad"));
-// let age = actualYear - yearOne;
-// let ageOrigin = actualYear - duration;
-
-// alert("Hola " + myName + " " + mylastName + ", tu edad es " + age + " años" + " y vives en " + myCity + " desde el " + ageOrigin + ".")
-
-let name = prompt("Ingrese su nombre");
+let nombre = prompt("Ingrese su nombre");
+let deuda = parseInt(prompt("Ingrese el valor de su deuda"))
 let convenio = prompt("¿Tiene alguno de estos convenios? Compensar, Policia, Colsubsidio, Cafam. Indique Si o No.");
 
-if (convenio=="Si") {
-    let convenioType = prompt("Ingrese el nombre de su convenio");
+if (convenio=="No") {
+    alert("Gracias " + nombre + " el valor de su deuda es " + descuentos(deuda,0,"No"));
 } else {
-    alert("no tiene convenios");
+    let convenioType = prompt("Ingrese el nombre de su convenio");
+    while(convenioType != " ") {
+        switch (convenioType) {
+            case "compensar":
+                alert("Gracias " + nombre + " por ser miembro de " + convenioType + " el valor de su deuda es " + descuentos(deuda,0.05,convenioType));
+                break;
+            case "colsubsidio":
+                alert("Gracias " + nombre + " por ser miembro de " + convenioType + " el valor de su deuda es " + descuentos(deuda,0.1,convenioType));
+                break;
+            case "policia":
+                alert("Gracias " + nombre + " por ser miembro de " + convenioType + " el valor de su deuda es " + descuentos(deuda,0.2,convenioType));
+                break;
+            case "cafam":
+                alert("Gracias " + nombre + " por ser miembro de " + convenioType + " el valor de su deuda es " + descuentos(deuda,0.15,convenioType));
+                break;
+            default:
+                alert("No ingresaste el nombre de tu convenio");
+                break;
+        }
+        convenioType = prompt("Debes ingresar un convenio");
+    }
 }
